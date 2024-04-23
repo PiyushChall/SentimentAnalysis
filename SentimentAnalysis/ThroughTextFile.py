@@ -14,18 +14,22 @@ def get_file():
 
 
 def converting_to_words(sentiment):
-    if sentiment > 0.3:
-        return "This is a positive sentence :)"
-    elif sentiment < -0.3:
-        return "This is a negative sentence :("
+    if sentiment > 0.5:
+        return "This is a Strongly Positive sentence :)"
+    elif 0 < sentiment <= 0.5:
+        return "This is a Positive sentence :)"
+    elif sentiment < -0.5:
+        return "This is a Strongly Negative sentence :("
+    elif -0.5 <= sentiment < 0:
+        return "This is a Positive sentence :("
     else:
         return "This is a neutral sentence :|"
 
 
 def main():
     text = get_file()
-    sentiment = analysis(text)
-    statement = converting_to_words(sentiment)
+    sentiment_score = analysis(text)
+    statement = converting_to_words(sentiment_score)
     print(statement)
 
 

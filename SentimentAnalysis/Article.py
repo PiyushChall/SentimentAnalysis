@@ -23,11 +23,25 @@ def analyze_article(url):
         return None
 
 
+def converting_to_words(sentiment):
+    if sentiment > 0.5:
+        return "This is a Strongly Positive sentence :)"
+    elif 0 < sentiment <= 0.5:
+        return "This is a Positive sentence :)"
+    elif sentiment < -0.5:
+        return "This is a Strongly Negative sentence :("
+    elif -0.5 <= sentiment < 0:
+        return "This is a Positive sentence :("
+    else:
+        return "This is a neutral sentence :|"
+
+
 def main():
     article_url = input("Enter the URL of the article: ")
     sentiment_score = analyze_article(article_url)
     if sentiment_score is not None:
-        print("Sentiment Score:", sentiment_score)
+        statement = converting_to_words(sentiment_score)
+        print(statement)
 
 
 if __name__ == '__main__':
