@@ -9,11 +9,11 @@ def analysis(text):
 
 def converting_to_words(sentiment):
     if sentiment > 0.3:
-        return "This is a positive sentence."
+        return "This is a positive sentence :)"
     elif sentiment < -0.3:
-        return "This is a negative sentence."
+        return "This is a negative sentence :("
     else:
-        return "This is a neutral sentence."
+        return "This is a neutral sentence :|"
 
 
 def main():

@@ -13,10 +13,20 @@ def get_file():
         return text
 
 
+def converting_to_words(sentiment):
+    if sentiment > 0.3:
+        return "This is a positive sentence :)"
+    elif sentiment < -0.3:
+        return "This is a negative sentence :("
+    else:
+        return "This is a neutral sentence :|"
+
+
 def main():
     text = get_file()
-    value = analysis(text)
-    print(value)
+    sentiment = analysis(text)
+    statement = converting_to_words(sentiment)
+    print(statement)
 
 
 if __name__ == "__main__":
