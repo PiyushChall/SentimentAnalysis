@@ -7,12 +7,17 @@ def analysis(text):
     return sentiment
 
 
-def getFile():
+def get_file():
     with open("test.txt", "r") as f:
         text = f.read()
         return text
 
-if __name__ == "__main__":
-    text = getFile()
+
+def main():
+    text = get_file()
     value = analysis(text)
     print(value)
+
+
+if __name__ == "__main__":
+    main()
